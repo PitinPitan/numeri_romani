@@ -1,0 +1,4 @@
+target/
+
+# per evitare file locali generati da Java
+*.class
