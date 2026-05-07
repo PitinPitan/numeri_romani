@@ -1,24 +1,4 @@
-# Maven
 target/
 
-# Java compiled files
+# per evitare file locali generati da Java
 *.class
-
-# Logs
-*.log
-
-# IntelliJ IDEA
-.idea/
-*.iml
-
-# VS Code
-.vscode/
-
-# Eclipse
-.settings/
-.project
-.classpath
-
-# OS files
-.DS_Store
-Thumbs.db
