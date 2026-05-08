@@ -28,16 +28,20 @@ public class IntegerToRomanTest {
         assertEquals("XIV",IntegerToRoman.convert(14));
     }
     @Test
-    public void testCovertSixteen() {
-        assertEquals("XVI",IntegerToRoman.convert(16));
-    }
-    @Test
     public void testCovertNineteen() {
         assertEquals("XIX",IntegerToRoman.convert(19));
     }
     @Test
-    public void testCovertTwenty() {
-        assertEquals("XX",IntegerToRoman.convert(20));
+    public void testCovertFourty() {
+        assertEquals("XL",IntegerToRoman.convert(40));
+    }
+    @Test
+    public void testCovertFourtyNine() {
+        assertEquals("XLIX",IntegerToRoman.convert(49));
+    }
+    @Test
+    public void testCovertFifty() {
+        assertEquals("L",IntegerToRoman.convert(50));
     }
     
     
