@@ -98,6 +98,7 @@
           <version>4.3.0</version>
           <configuration>
               <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+              <serviceName>github</serviceName>
           </configuration>
           <dependencies>
               <dependency>
