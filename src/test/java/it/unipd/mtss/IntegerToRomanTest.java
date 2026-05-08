@@ -43,6 +43,14 @@ public class IntegerToRomanTest {
     public void testCovertFifty() {
         assertEquals("L",IntegerToRoman.convert(50));
     }
+    @Test
+    public void testCovertNinty() {
+        assertEquals("XC",IntegerToRoman.convert(90));
+    }
+    @Test
+    public void testCovertOneHundred() {
+        assertEquals("C",IntegerToRoman.convert(100));
+    }
     
     
 }

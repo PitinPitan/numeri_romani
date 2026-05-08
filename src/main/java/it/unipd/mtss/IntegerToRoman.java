@@ -7,8 +7,8 @@ package it.unipd.mtss;
 
 public class IntegerToRoman
 {
-    private static String[] nRomani = {"L","XL","X","IX","V","IV","I"};
-    private static int[] nArabi = {50,40,10,9,5,4,1};
+    private static String[] nRomani = {"C","XC","L","XL","X","IX","V","IV","I"};
+    private static int[] nArabi = {100,90,50,40,10,9,5,4,1};
     
 
     public static String convert(int number) {
