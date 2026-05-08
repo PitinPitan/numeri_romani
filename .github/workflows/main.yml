@@ -41,8 +41,6 @@ jobs:
     - name: Generate Coverage Report
       run: mvn jacoco:report
 
-    # 7. Invio dei dati a Coveralls [cite: 103]
+    # 7. Invio dei dati a Coveralls
     - name: Upload to Coveralls
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn coveralls:report
+      run: mvn coveralls:report -DrepoToken=${{ secrets.GITHUB_TOKEN }}
