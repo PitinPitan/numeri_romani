@@ -71,6 +71,25 @@
               </execution>
           </executions>
         </plugin>
+          <!-- Plugin Checkstyle: Analisi statica obbligatoria in fase di package -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>3.3.1</version>
+          <configuration>
+              <configLocation>checkstyle.xml</configLocation>
+              <failsOnError>true</failsOnError>
+              <consoleOutput>true</consoleOutput>
+          </configuration>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                  <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
     </plugins>
 
   </build>
