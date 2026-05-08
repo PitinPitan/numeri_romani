@@ -1,0 +1,48 @@
+name: Java CI with Maven
+
+# Esegue la pipeline ad ogni push o Pull Request 
+on:
+  push:
+    branches: [ main, development ]
+  pull_request:
+    branches: [ main, development ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Scarica il codice dal repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 2. Configura l'ambiente Java (es. versione 11 o 17)
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: maven
+
+    # 3. Compilazione del progetto [cite: 67]
+    - name: Compile Project
+      run: mvn compile
+
+    # 4. Esecuzione dei test di unità [cite: 68]
+    - name: Run Tests
+      run: mvn test
+
+    # 5. Analisi statica del codice [cite: 69]
+    # Questo step fallirà se il codice non rispetta le regole Checkstyle [cite: 99]
+    - name: Static Code Analysis
+      run: mvn checkstyle:check
+
+    # 6. Calcolo del code coverage (necessario per Coveralls) [cite: 103]
+    - name: Generate Coverage Report
+      run: mvn jacoco:report
+
+    # 7. Invio dei dati a Coveralls [cite: 103]
+    - name: Upload to Coveralls
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: mvn coveralls:report
