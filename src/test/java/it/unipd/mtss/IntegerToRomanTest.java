@@ -19,5 +19,21 @@ public class IntegerToRomanTest {
     public void testCovertThree() {
         assertEquals("III",IntegerToRoman.convert(3));
     }
+
+    @Test
+    public void testCovertFour() {
+        assertEquals("IV",IntegerToRoman.convert(4));
+    }
+
+    @Test
+    public void testCovertFive() {
+        assertEquals("V",IntegerToRoman.convert(5));
+    }
+    
+    @Test
+    public void testCovertSix() {
+        assertEquals("VI",IntegerToRoman.convert(6));
+    }
+
     
 }
