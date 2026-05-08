@@ -51,6 +51,14 @@ public class IntegerToRomanTest {
     public void testCovertOneHundred() {
         assertEquals("C",IntegerToRoman.convert(100));
     }
+    @Test
+    public void testCovertFourHundred() {
+        assertEquals("CD",IntegerToRoman.convert(400));
+    }
+    @Test
+    public void testCovertFiveHundred() {
+        assertEquals("D",IntegerToRoman.convert(500));
+    }
     
     
 }
