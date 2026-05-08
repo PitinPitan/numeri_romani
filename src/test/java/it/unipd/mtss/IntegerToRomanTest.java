@@ -11,21 +11,33 @@ import org.junit.Test;
 public class IntegerToRomanTest {
 
     @Test
+    public void testCovertOne() {
+        assertEquals("I",IntegerToRoman.convert(1));
+    }
+
+    @Test
     public void testCovertFour() {
         assertEquals("IV",IntegerToRoman.convert(4));
-    }
-    
-    @Test
-    public void testCovertSix() {
-        assertEquals("VI",IntegerToRoman.convert(6));
     }
     @Test
     public void testCovertNine() {
         assertEquals("IX",IntegerToRoman.convert(9));
     }
     @Test
-    public void testCovertTen() {
-        assertEquals("X",IntegerToRoman.convert(10));
+    public void testCovertFourteen() {
+        assertEquals("XIV",IntegerToRoman.convert(14));
+    }
+    @Test
+    public void testCovertSixteen() {
+        assertEquals("XVI",IntegerToRoman.convert(16));
+    }
+    @Test
+    public void testCovertNineteen() {
+        assertEquals("XIX",IntegerToRoman.convert(19));
+    }
+    @Test
+    public void testCovertTwenty() {
+        assertEquals("XX",IntegerToRoman.convert(20));
     }
     
     
