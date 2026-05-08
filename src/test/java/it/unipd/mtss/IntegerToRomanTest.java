@@ -38,5 +38,15 @@ public class IntegerToRomanTest {
     public void TestNumeroComplesso() {
         assertEquals("DCCCLXXXVIII", IntegerToRoman.convert(888));
     }   
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testUnderRange() {
+        IntegerToRoman.convert(0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testOverRange() {
+        IntegerToRoman.convert(1001);
+    }
     
 }
