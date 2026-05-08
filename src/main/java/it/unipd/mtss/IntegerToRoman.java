@@ -8,7 +8,12 @@ package it.unipd.mtss;
 public class IntegerToRoman
 {
     public static String convert(int number) {
-        // TODO: Implementare la logica per i primi 3 numeri
-        return "";
+        String stringa = "";
+        if(number<=3){
+            for(int i=0; i<number;i++){
+                stringa+="I";
+            }
+        }
+        return stringa;
     }
 }

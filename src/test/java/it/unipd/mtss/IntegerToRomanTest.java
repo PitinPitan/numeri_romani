@@ -11,9 +11,13 @@ import org.junit.Test;
 public class IntegerToRomanTest {
 
     @Test
-    public void testConstructor() {
-        // Questo serve solo per coprire il costruttore implicito della classe
-        IntegerToRoman test = new IntegerToRoman();
-        assertNotNull(test);
+    public void testCovertOne() {
+        assertEquals("I",IntegerToRoman.convert(1));
     }
+    
+    @Test
+    public void testCovertThree() {
+        assertEquals("III",IntegerToRoman.convert(3));
+    }
+    
 }
