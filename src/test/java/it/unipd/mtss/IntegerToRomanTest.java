@@ -9,56 +9,34 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
 public class IntegerToRomanTest {
-
     @Test
-    public void testCovertOne() {
-        assertEquals("I",IntegerToRoman.convert(1));
+    public void TestBase() {
+        assertEquals("I", IntegerToRoman.convert(1));
+        assertEquals("V", IntegerToRoman.convert(5));
+        assertEquals("X", IntegerToRoman.convert(10));
+        assertEquals("L", IntegerToRoman.convert(50));
+        assertEquals("C", IntegerToRoman.convert(100));
+        assertEquals("D", IntegerToRoman.convert(500));
+        assertEquals("M", IntegerToRoman.convert(1000));
     }
 
     @Test
-    public void testCovertFour() {
-        assertEquals("IV",IntegerToRoman.convert(4));
+    public void TestSottrattivo() {
+        assertEquals("IV", IntegerToRoman.convert(4));
+        assertEquals("IX", IntegerToRoman.convert(9));
+        assertEquals("XIV", IntegerToRoman.convert(14));
+        assertEquals("XXXIV", IntegerToRoman.convert(34));
+        assertEquals("XL", IntegerToRoman.convert(40));
+        assertEquals("XC", IntegerToRoman.convert(90));
+        assertEquals("CXL", IntegerToRoman.convert(140));
+        assertEquals("CD", IntegerToRoman.convert(400));
+        assertEquals("CDXCIX", IntegerToRoman.convert(499));
+        assertEquals("CM", IntegerToRoman.convert(900));
     }
+
     @Test
-    public void testCovertNine() {
-        assertEquals("IX",IntegerToRoman.convert(9));
-    }
-    @Test
-    public void testCovertFourteen() {
-        assertEquals("XIV",IntegerToRoman.convert(14));
-    }
-    @Test
-    public void testCovertNineteen() {
-        assertEquals("XIX",IntegerToRoman.convert(19));
-    }
-    @Test
-    public void testCovertFourty() {
-        assertEquals("XL",IntegerToRoman.convert(40));
-    }
-    @Test
-    public void testCovertFourtyNine() {
-        assertEquals("XLIX",IntegerToRoman.convert(49));
-    }
-    @Test
-    public void testCovertFifty() {
-        assertEquals("L",IntegerToRoman.convert(50));
-    }
-    @Test
-    public void testCovertNinty() {
-        assertEquals("XC",IntegerToRoman.convert(90));
-    }
-    @Test
-    public void testCovertOneHundred() {
-        assertEquals("C",IntegerToRoman.convert(100));
-    }
-    @Test
-    public void testCovertFourHundred() {
-        assertEquals("CD",IntegerToRoman.convert(400));
-    }
-    @Test
-    public void testCovertFiveHundred() {
-        assertEquals("D",IntegerToRoman.convert(500));
-    }
-    
+    public void TestNumeroComplesso() {
+        assertEquals("DCCCLXXXVIII", IntegerToRoman.convert(888));
+    }   
     
 }
