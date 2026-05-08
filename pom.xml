@@ -6,6 +6,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
@@ -17,4 +18,96 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+        <!-- Compilatore Maven base -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.11.0</version>
+            <configuration>
+                <source>${maven.compiler.source}</source>
+                <target>${maven.compiler.target}</target>
+            </configuration>
+        </plugin>
+        
+        <!-- JACOCO: Misurazione della copertura del codice locale all'85% -->
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.14</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>report</id>
+              <phase>test</phase>
+              <goals>
+                <goal>report</goal>
+              </goals>
+            </execution>
+            <execution>
+                <id>check</id>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                      <rule>
+                          <element>BUNDLE</element>
+                          <limits>
+                             <limit>
+                                  <counter>INSTRUCTION</counter>
+                                  <value>COVEREDRATIO</value>
+                                  <minimum>0.85</minimum>
+                              </limit>
+                          </limits>
+                      </rule>
+                  </rules>
+                </configuration>
+              </execution>
+          </executions>
+        </plugin>
+          <!-- Plugin Checkstyle: Analisi statica obbligatoria in fase di package -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>3.3.1</version>
+          <configuration>
+              <configLocation>checkstyle.xml</configLocation>
+              <failsOnError>true</failsOnError>
+              <consoleOutput>true</consoleOutput>
+          </configuration>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                  <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <!-- Plugin Converalls-->
+        <plugin>
+          <groupId>org.eluder.coveralls</groupId>
+          <artifactId>coveralls-maven-plugin</artifactId>
+          <version>4.3.0</version>
+          <configuration>
+              <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+              <serviceName>github</serviceName>
+          </configuration>
+          <dependencies>
+              <dependency>
+                  <groupId>javax.xml.bind</groupId>
+                  <artifactId>jaxb-api</artifactId>
+                  <version>2.3.1</version>
+              </dependency>
+          </dependencies>
+        </plugin>
+    </plugins>
+  </build>
 </project>
