@@ -22,41 +22,6 @@ public class IntegerToRoman
                 number-=nArabi[i];
             }
         }
-        
-
-
-
-
-        // while(number>0){
-        //     if(number<4){
-        //         for(; number>0;number--){
-        //             stringa+="I";
-        //         }
-        //     }else{
-        //         if(number>=10 && number < 39){
-        //             stringa+="X";
-        //             number-=10;
-        //         }
-        //         if(number>=5 && number<9){
-        //             stringa+="V";
-        //             number-=5;
-        //         }
-        //         switch (number) {
-        //             case 4:
-        //                 stringa+="IV";
-        //                 number-=4;        
-        //                 break;
-        //             case 9:
-        //                 stringa+="IX";
-        //                 number-=9;        
-        //                 break;
-                
-        //             default:
-        //                 break;
-        //         }
-        //     }
-
-        // }
         return stringa;
     }
 }
